@@ -2,7 +2,7 @@ import './App.css';
 import Formulario from './Formulario';
 import Tabela from './Tabela';
 function App() {
-  const [btnCadastrar, setBtnCadastrar]
+  const [btnCadastrar, setBtnCadastrar] = useState(true);
   return (
 
     <div className="">
