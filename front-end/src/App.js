@@ -30,7 +30,7 @@ function App() {
     //rota para cadastro
     fetch(''),{
       method: "post",
-      body:Json.stringify(objVeiculo),
+      body:JSON.stringify(objVeiculo),
       headers:{
         "Content-type": "application/json",
         "Accept": "application/json"
@@ -38,8 +38,21 @@ function App() {
     }
     .then(retorno => retorno.json())
     .then(retornoConvertido =>{
-      console.log(retornoConvertido)
+      if(retornoConvertido.mensagem !== undefined){
+        alert(retornoConvertido.mensagem)
+      } else {
+        setVeiculos([...veiculos, retornoConvertido]);
+        alert('Produto cadastrado com sucesso')
+        limparFormulario()
+
+      }
+
     })
+  }
+
+  //limpar formulario
+  const limparFormulario = ()=>{
+    setObjVeiculo(veiculo);
   }
 
   return (
@@ -48,7 +61,7 @@ function App() {
 
       <p>{JSON.stringify(objVeiculo)}</p>
 
-      <Formulario botao = {btnCadastrar} eventoDoTeclado = {digitando} cadastrar = {cadastrar}/>
+      <Formulario botao = {btnCadastrar} eventoDoTeclado = {digitando} cadastrar = {cadastrar} obj = {objVeiculo}/>
 
       <Tabela vetor={veiculos} />
 
