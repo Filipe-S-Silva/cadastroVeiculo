@@ -144,13 +144,22 @@ function App() {
 
   return (
 
-    <div className="">
+    <div className="body">
 
       {/* <p>{JSON.stringify(objVeiculo)}</p> */}
 
-      <Formulario botao={btnCadastrar} eventoDoTeclado={digitando} cadastrar={cadastrar} obj={objVeiculo} cancelar={limparFormulario} remover={remover} alterar = {alterar}/>
+      <nav className="navbar navbar-light bg-light">
+        <a className="navbar-brand" href="#">
+          <img src="logo.jpg" width="60" height="60" className="d-inline-block align-top" />
+          <p>Veiculos&Cia</p>
+        </a>
+      </nav>
 
-      <Tabela vetor={veiculos} selecionar={selecionarVeiculo} />
+      <div>
+        <Formulario botao={btnCadastrar} eventoDoTeclado={digitando} cadastrar={cadastrar} obj={objVeiculo} cancelar={limparFormulario} remover={remover} alterar={alterar} />
+
+        <Tabela vetor={veiculos} selecionar={selecionarVeiculo} />
+      </div>
 
     </div>
   );
