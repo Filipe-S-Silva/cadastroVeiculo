@@ -146,7 +146,7 @@ function App() {
 
     <div className="">
 
-      <p>{JSON.stringify(objVeiculo)}</p>
+      {/* <p>{JSON.stringify(objVeiculo)}</p> */}
 
       <Formulario botao={btnCadastrar} eventoDoTeclado={digitando} cadastrar={cadastrar} obj={objVeiculo} cancelar={limparFormulario} remover={remover} alterar = {alterar}/>
 
