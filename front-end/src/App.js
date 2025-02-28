@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     //rota para listar
-    fetch('localhost:8080/listar')
+    fetch('http://localhost:8080/listar')
       .then(retorno => retorno.json())
       .then(retornoConvertido => setVeiculos(retornoConvertido)
       )
@@ -30,7 +30,7 @@ function App() {
   //cadastrar
   const cadastrar = () => {
     //rota para cadastro
-    fetch('localhost:8080/cadastrar', {
+    fetch('http://localhost:8080/cadastrar', {
       method: "post",
       body: JSON.stringify(objVeiculo),
       headers: {
@@ -67,7 +67,7 @@ function App() {
   //remover
   const remover = () => {
     //rota para de remoção
-    fetch('localhost:8080/remover/' + objVeiculo.codigo, {
+    fetch('http://localhost:8080/remover/' + objVeiculo.codigo, {
       method: "delete",
 
       headers: {
@@ -105,7 +105,7 @@ function App() {
   //alterar
   const alterar = () => {
     //rota para alterar
-    fetch('localhost:8080/alterar', {
+    fetch('http://localhost:8080/alterar', {
       method: "put",
       body: JSON.stringify(objVeiculo),
       headers: {
